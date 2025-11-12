@@ -762,6 +762,11 @@ jobs:
         uses: geekyeggo/delete-artifact@v5
         with:
           name: digests-*
+      - name: Cleanup Pages
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: github-pages*
+          failOnError: false
       - name: Merge Artifacts
         uses: actions/upload-artifact/merge@v4
         with:
