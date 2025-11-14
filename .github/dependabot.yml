@@ -14,10 +14,6 @@ updates:
     commit-message:
       prefix: "gradle"
       include: "scope"
-    groups:
-      actions-deps:
-        patterns:
-          - "*"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -33,6 +29,6 @@ updates:
       prefix: "github-actions"
       include: "scope"
     groups:
-      dependencies:
+      actions-deps:
         patterns:
           - "*"
