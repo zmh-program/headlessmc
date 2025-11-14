@@ -80,7 +80,7 @@ public class FabricCommand extends AbstractDownloadingVersionCommand implements 
     }
 
     private void install(Version version, File jarFile, String... args) throws CommandException {
-        int bestVersion = 17;
+        int bestVersion = version.getJava() == null ? 21 : version.getJava();
         String javaVersion = CommandUtil.getOption("--java", args);
         if (javaVersion != null) {
             bestVersion = ParseUtil.parseI(javaVersion);
@@ -89,7 +89,7 @@ public class FabricCommand extends AbstractDownloadingVersionCommand implements 
         boolean inMemory = CommandUtil.hasFlag("-inmemory", args) || ctx.getConfig().get(LauncherProperties.ALWAYS_IN_MEMORY, false);
         Java java = inMemory ? ctx.getJavaService().getCurrent() : ctx.getJavaService().findBestVersion(ctx, bestVersion, true);
         if (java == null) {
-            java = ctx.getJavaService().findBestVersion(ctx, 8);
+            java = ctx.getJavaService().findBestVersion(ctx, bestVersion);
             if (java == null) {
                 throw new CommandException("No Java version found! Please configure hmc.java.versions.");
             }
