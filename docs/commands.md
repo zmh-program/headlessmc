@@ -459,6 +459,8 @@ You can list all commands available in HeadlessMc with the `help` command.
     | `-forceBoot`   | `flag`    | If running In-Memory, forces the use of [bootstraplauncher](https://github.com/McModLauncher/bootstraplauncher).   |
     | `--jvm`        | `strings` | JVM arguments for Minecraft.                                                                                       |
     | `--game-args`  | `strings` | Game arguments for Minecraft, e.g. `--quickPlayMultiplayer IP:PORT`.                                               |
+    | `--account`    | `string`  | Account username or uuid to use for this launch.                                                                    |
+    | `--accessToken` | `string`  | Access token to use for this launch.                                                                                |
     | `--retries`    | `number`  | Launches the game again this many times if it fails to launch.                                                     |
 
     !!! tip "Version command"

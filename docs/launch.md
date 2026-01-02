@@ -32,6 +32,9 @@ launch fabric:1.21.5
 ```
 Currently HeadlessMc supports the client modloaders `fabric`, `forge` and `neoforge`.
 
+You can also pick an account for a single launch with `--account <username/uuid>`,
+or supply an access token with `--accessToken <access-token>`.
+
 #### Headless Launch
 One of the main features of HeadlessMc is,
 that it can launch the client in headless mode,
